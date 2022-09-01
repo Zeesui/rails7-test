@@ -18,7 +18,15 @@ class PostsController < ApplicationController
     end
   end
 
-  
+  def destroy
+    @post = Post.find_by_group_id(params[:group_id])
+    @post.delete
+    redirect_to account_posts_path
+  end
+
+  def edit
+    @post = Post.find_by_group_id(params[:group_id])
+  end
 
   private
 
