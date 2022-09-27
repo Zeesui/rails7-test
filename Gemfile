@@ -48,10 +48,10 @@ gem "bootsnap", require: false
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
 
-gem "bootstrap-sass"
+#gem "bootstrap-sass"
 gem "simple_form"
 gem "devise"
-#gem 'bootstrap', '~> 5.2.0'
+gem 'bootstrap', '~> 5.2.0'
 gem 'will_paginate'
 
 group :development, :test do

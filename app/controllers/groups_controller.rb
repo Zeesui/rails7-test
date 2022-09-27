@@ -1,5 +1,5 @@
 class GroupsController < ApplicationController
-  before_action :authenticate_user! , only: [:new, :create, :edit, :destroy, :update, :join, :quit]
+#  before_action :authenticate_user! , only: [:new, :create, :edit, :destroy, :update, :join, :quit]
   before_action :find_group_and_check, only: [:edit, :update, :destroy]
 
   def index
@@ -51,7 +51,7 @@ class GroupsController < ApplicationController
     @group = Group.find(params[:id])
     if !current_user.is_member_of?(@group)
       current_user.join!(@group)
-    
+
     end
     redirect_to group_path(@group)
   end

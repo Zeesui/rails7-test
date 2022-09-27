@@ -2,18 +2,18 @@
   <div class="group">
     <span class="pull-right">
       <% if current_user && current_user.is_member_of?(@group) %>
-        <label class="label label-success">
+        <div class="btn btn-success">
           群组成员
-        </label>
-        <%= link_to("退出群组", quit_group_path(@group), method: :get, class: "btn btn-default") %>
+        </div>
+        <%= link_to("退出群组", quit_group_path(@group), method: :get, class: "btn btn-outline-dark") %>
           <% else %>
-          <label class="label label-warning">
+          <div class="btn btn-danger">
             不是群组成员
-          </label>
-          <%= link_to("加入群组", join_group_path(@group), :method => :get, class: "btn btn-default") %>
+          </div>
+          <%= link_to("加入群组", join_group_path(@group), :method => :get, class: "btn btn-outline-dark") %>
       <% end %>
     </span>
-    <%= link_to("Write a post", new_group_post_path(@group), class: "btn btn-default pull-right") %>
+    <%= link_to("Write a post", new_group_post_path(@group), class: "btn btn-outline-dark pull-right") %>
     <% if current_user && current_user == @group.user %>
     <%= link_to("Edit", edit_group_path(@group), class: "btn btn-primary pull-right") %>
     <% end %>
